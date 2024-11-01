@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link href="images/bg.png" rel="shortcut icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.13/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.2/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#57534e',
+                    secondary: '',
+                    tertiary: '',
+                },
+                boxShadow: {
+                    middle: '0px 0px 40px 1px rgba(0, 0, 0, 0.25)',
+                },
+                keyframes: {
+                    fadeIn: {
+                        '0%': { opacity: 0 },
+                        '100%': { opacity: 1 },
+                    },
+                },
+                animation: {
+                    fadeIn: "fadeIn 2s forwards",
+                },
+            },
+        },
+    };
+    </script>
+
+</head>
+<body x-data="{ isOpen : window.innerWidth >= 786 }" @resize.window="isOpen = window.innerWidth >= 786" class="bg-white">
+
+    <nav class="fixed top-0 z-40 w-full bg-white py-4 px-5 md:px-8">
+        <div class="flex justify-between items-center">
+            <button @click="if (window.innerWidth < 786) isOpen = !isOpen" class="visible md:invisible">
+                <svg class="w-[22px] md:w-6 fill-black" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 7C20.75 7.41421 20.4142 7.75 20 7.75L4 7.75C3.58579 7.75 3.25 7.41421 3.25 7C3.25 6.58579 3.58579 6.25 4 6.25L20 6.25C20.4142 6.25 20.75 6.58579 20.75 7Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 12C20.75 12.4142 20.4142 12.75 20 12.75L4 12.75C3.58579 12.75 3.25 12.4142 3.25 12C3.25 11.5858 3.58579 11.25 4 11.25L20 11.25C20.4142 11.25 20.75 11.5858 20.75 12Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 17C20.75 17.4142 20.4142 17.75 20 17.75L4 17.75C3.58579 17.75 3.25 17.4142 3.25 17C3.25 16.5858 3.58579 16.25 4 16.25L20 16.25C20.4142 16.25 20.75 16.5858 20.75 17Z"/>
+                </svg>
+            </button>
+            <div class="flex items-center gap-5 md:gap-6">
+                <div class="flex items-center gap-4 md:gap-6">
+                    <div x-data="{ isOpen : false }" class="relative space-y-3">
+                        <div @click="isOpen = !isOpen" class="relative cursor-pointer">
+                            <svg class="w-[18px] md:w-5 stroke-[#637381] stroke-[2]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.02 2.90991C8.70997 2.90991 6.01997 5.59991 6.01997 8.90991V11.7999C6.01997 12.4099 5.75997 13.3399 5.44997 13.8599L4.29997 15.7699C3.58997 16.9499 4.07997 18.2599 5.37997 18.6999C9.68997 20.1399 14.34 20.1399 18.65 18.6999C19.86 18.2999 20.39 16.8699 19.73 15.7699L18.58 13.8599C18.28 13.3399 18.02 12.4099 18.02 11.7999V8.90991C18.02 5.60991 15.32 2.90991 12.02 2.90991Z" stroke-miterlimit="10" stroke-linecap="round"/>
+                                <path d="M13.87 3.19994C13.56 3.10994 13.24 3.03994 12.91 2.99994C11.95 2.87994 11.03 2.94994 10.17 3.19994C10.46 2.45994 11.18 1.93994 12.02 1.93994C12.86 1.93994 13.58 2.45994 13.87 3.19994Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.02 19.0601C15.02 20.7101 13.67 22.0601 12.02 22.0601C11.2 22.0601 10.44 21.7201 9.90002 21.1801C9.36002 20.6401 9.02002 19.8801 9.02002 19.0601" stroke-miterlimit="10"/>
+                            </svg>
+                            <div class="absolute -top-0 -right-0 bg-red-500 p-1 rounded-full"></div>
+                        </div>
+                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
+                            <div class="grid w-60 sm:w-72 md:w-80 lg:w-96 bg-white rounded md:rounded-md shadow-lg shadow-black/20">
+                                <div class="p-4 border-b border-[#eaeaea]">
+                                    <h1 class="text-start text-xs md:text-sm text-black font-normal">Notifikasi</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div x-data="{ isOpen : false }" class="relative space-y-3">
+                    <button @click="isOpen = !isOpen" class="flex items-center gap-2 md:gap-3">
+                        <img class="w-7 lg:w-8 h-7 lg:h-8 bg-transparent object-cover rounded-full" src="/images/avatar.jpg">
+                        <div class="hidden md:block text-xs md:text-sm text-black font-semibold capitalize">Rahman</div>
+                        <svg class="hidden md:block w-2 fill-black" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.246 7.08721C3.20733 7.04954 3.042 6.90731 2.906 6.77482C2.05067 5.99807 0.650667 3.97177 0.223333 2.91121C0.154667 2.75014 0.00933333 2.34293 0 2.12537C0 1.91689 0.048 1.71816 0.145333 1.52852C0.281333 1.29211 0.495333 1.10247 0.748 0.998559C0.923333 0.931665 1.448 0.827752 1.45733 0.827752C2.03133 0.723839 2.964 0.666687 3.99467 0.666687C4.97667 0.666687 5.87133 0.723839 6.454 0.808918C6.46333 0.81866 7.11533 0.922573 7.33867 1.03623C7.74667 1.2447 8 1.65191 8 2.0877V2.12537C7.99 2.40918 7.73667 3.00603 7.72733 3.00603C7.29933 4.00944 5.968 5.98898 5.08333 6.78456C5.08333 6.78456 4.856 7.00863 4.714 7.10604C4.51 7.25802 4.25733 7.33335 4.00467 7.33335C3.72267 7.33335 3.46 7.24827 3.246 7.08721Z"/>
+                        </svg>
+                    </button>
+                    <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
+                        <div class="grid gap-0.5 bg-white p-4 space-y-2 rounded md:rounded-md shadow-lg shadow-black/20">
+                            <a href="Profile.html">
+                                <button class="flex items-center gap-2 md:gap-3">
+                                    <svg class="w-2 md:w-2.5 fill-black" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.49998 0.177246C3.079 0.177246 1.92706 1.32918 1.92706 2.75016C1.92706 4.17115 3.079 5.32308 4.49998 5.32308C5.92096 5.32308 7.0729 4.17115 7.0729 2.75016C7.0729 1.32918 5.92096 0.177246 4.49998 0.177246ZM2.73956 2.75016C2.73956 1.77791 3.52773 0.989746 4.49998 0.989746C5.47223 0.989746 6.2604 1.77791 6.2604 2.75016C6.2604 3.72241 5.47223 4.51058 4.49998 4.51058C3.52773 4.51058 2.73956 3.72241 2.73956 2.75016Z"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.87498 6.13558C1.454 6.13558 0.302063 7.28751 0.302063 8.7085C0.302063 10.1295 1.454 11.2814 2.87498 11.2814H6.12498C7.54596 11.2814 8.6979 10.1295 8.6979 8.7085C8.6979 7.28751 7.54596 6.13558 6.12498 6.13558H2.87498ZM1.11456 8.7085C1.11456 7.73625 1.90273 6.94808 2.87498 6.94808H6.12498C7.09723 6.94808 7.8854 7.73625 7.8854 8.7085C7.8854 9.68075 7.09723 10.4689 6.12498 10.4689H2.87498C1.90273 10.4689 1.11456 9.68075 1.11456 8.7085Z"/>
+                                    </svg>
+                                    <h1 class="text-[10px] md:text-xs text-black font-medium">Profile</h1>
+                                </button>
+                            </a>
+                            <a href="Password.html">
+                                <button class="flex items-center gap-2 md:gap-3">
+                                    <svg class="w-2 md:w-2.5 fill-black" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.50003 3.42725C4.67736 3.42725 4.01045 4.09416 4.01045 4.91683C4.01045 5.59867 4.46856 6.17351 5.09378 6.35034V8.16683C5.09378 8.3912 5.27566 8.57308 5.50003 8.57308C5.7244 8.57308 5.90628 8.3912 5.90628 8.16683V6.35034C6.5315 6.17351 6.98961 5.59867 6.98961 4.91683C6.98961 4.09416 6.3227 3.42725 5.50003 3.42725ZM4.82295 4.91683C4.82295 4.54289 5.12609 4.23975 5.50003 4.23975C5.87397 4.23975 6.17711 4.54289 6.17711 4.91683C6.17711 5.29077 5.87397 5.59391 5.50003 5.59391C5.12609 5.59391 4.82295 5.29077 4.82295 4.91683Z"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.17997 0.177246C3.34483 0.177246 2.66782 0.85426 2.66782 1.6894C2.66782 2.07581 2.35457 2.38905 1.96817 2.38905H1.80087C0.947168 2.38905 0.186713 3.04956 0.23303 3.96701C0.288021 5.05631 0.529958 6.75406 1.41242 8.36226C1.65957 8.81268 1.98966 9.25515 2.34649 9.66741L2.37336 9.69845C2.88668 10.2916 3.31468 10.7861 3.77481 11.1232C4.26972 11.4858 4.79795 11.6664 5.50011 11.6664C6.20227 11.6664 6.73049 11.4858 7.2254 11.1232C7.68553 10.7861 8.11353 10.2916 8.62685 9.69845L8.65372 9.66741C9.01055 9.25515 9.34064 8.81268 9.5878 8.36226C10.4996 6.70059 10.727 4.82294 10.7718 3.65237C10.8068 2.73932 10.0517 2.07308 9.19329 2.07308H8.87406C8.57491 2.07308 8.33239 1.83057 8.33239 1.53141C8.33239 0.783527 7.72611 0.177246 6.97823 0.177246H4.17997ZM3.48032 1.6894C3.48032 1.30299 3.79356 0.989746 4.17997 0.989746H6.97823C7.27738 0.989746 7.51989 1.23226 7.51989 1.53141C7.51989 2.2793 8.12617 2.88558 8.87406 2.88558H9.19329C9.64702 2.88558 9.97515 3.22309 9.9599 3.62126C9.91705 4.73967 9.69897 6.47068 8.87549 7.9714C8.66481 8.35534 8.37309 8.75012 8.03938 9.13568C7.49223 9.76783 7.12277 10.1912 6.74523 10.4678C6.39448 10.7247 6.03571 10.8539 5.50011 10.8539C4.9645 10.8539 4.60573 10.7247 4.25498 10.4678C3.87744 10.1912 3.50798 9.76783 2.96083 9.13568C2.62712 8.75012 2.3354 8.35534 2.12472 7.9714C1.32388 6.51193 1.0962 4.95019 1.0445 3.92604C1.02482 3.53639 1.34579 3.20155 1.80087 3.20155H1.96817C2.80331 3.20155 3.48032 2.52454 3.48032 1.6894Z"/>
+                                        </svg>
+                                    <h1 class="text-[10px] md:text-xs text-black font-medium">Ganti Password</h1>
+                                </button>
+                            </a>
+                            <div class="border-b-[0.5px] border-[#E6E6E6]"></div>
+                            <button class="flex items-center gap-2 md:gap-3">
+                                <svg class="w-2 md:w-2.5 fill-[#FF4E4E]" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.16877 0.718752C7.63028 0.718716 7.9114 0.718693 8.15389 0.7571C9.4866 0.96818 10.5318 2.0134 10.7429 3.34611C10.7813 3.5886 10.7813 3.86972 10.7812 4.33123L10.7812 7.66878C10.7813 8.13029 10.7813 8.41141 10.7429 8.6539C10.5318 9.98661 9.4866 11.0318 8.15389 11.2429C7.9114 11.2813 7.63028 11.2813 7.16876 11.2813L6.58333 11.2813C5.88264 11.2813 5.23493 11.0494 4.71434 10.6584C4.53495 10.5236 4.49876 10.2689 4.6335 10.0896C4.76825 9.91016 5.02292 9.87396 5.20231 10.0087C5.58703 10.2977 6.06461 10.4688 6.58333 10.4688H7.125C7.64373 10.4688 7.8558 10.4675 8.02679 10.4404C9.01183 10.2844 9.78439 9.51184 9.9404 8.5268C9.96748 8.35581 9.96875 8.14374 9.96875 7.625L9.96875 4.375C9.96875 3.85627 9.96748 3.6442 9.9404 3.47321C9.78439 2.48817 9.01183 1.71561 8.02679 1.5596C7.8558 1.53252 7.64373 1.53125 7.125 1.53125H6.58333C6.06461 1.53125 5.58703 1.70233 5.20231 1.9913C5.02292 2.12605 4.76825 2.08985 4.6335 1.91046C4.49876 1.73106 4.53495 1.4764 4.71434 1.34165C5.23493 0.950623 5.88264 0.718755 6.58333 0.718755L7.16877 0.718752Z"/>
+                                    <path d="M2.53926 3.51501C2.71507 3.37561 2.97059 3.40513 3.10999 3.58094C3.24939 3.75675 3.21987 4.01227 3.04406 4.15167L2.08912 4.90883C1.70777 5.2112 1.44669 5.41898 1.26932 5.59376L8.20833 5.59375C8.43269 5.59375 8.61458 5.77564 8.61458 6C8.61458 6.22437 8.43269 6.40625 8.20833 6.40625L1.26932 6.40626C1.44669 6.58103 1.70778 6.78881 2.08912 7.09118L3.04406 7.84834C3.21987 7.98774 3.24939 8.24326 3.10999 8.41907C2.9706 8.59488 2.71507 8.6244 2.53926 8.485L1.56493 7.71246C1.20066 7.42365 0.900078 7.18533 0.685946 6.97202C0.466205 6.75313 0.284047 6.51017 0.234581 6.1997C0.224043 6.13356 0.218746 6.06684 0.218746 6.00001C0.218746 5.93317 0.224043 5.86645 0.234581 5.80031C0.284047 5.48984 0.466205 5.24688 0.685944 5.02799C0.900075 4.81468 1.20065 4.57637 1.56492 4.28756L2.53926 3.51501Z"/>
+                                </svg>       
+                                <h1 class="text-[10px] md:text-xs text-[#FF5555] font-medium">Keluar</h1>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div x-show="window.innerWidth < 640 && isOpen" x-transition.opacity :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden fixed inset-0 bg-zinc-800 bg-opacity-80 z-40"></div>
+    <div x-data="{ isOpenn : true }">
+        <aside x-show="isOpen" 
+        @click.outside="if (window.innerWidth < 786) isOpen = false"
+        x-transition:enter="transform transition-transform duration-300"
+        x-transition:enter-start="-translate-x-full" 
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transform transition-transform duration-300"
+        x-transition:leave-start="translate-x-0" 
+        x-transition:leave-end="-translate-x-full"
+        class="hidden fixed top-0 left-0 z-50 w-60 bg-primary shadow-xl h-screen scrollbar-y"
+        :class="{ 'block': isOpen, 'hidden': !isOpen, 'w-60': isOpenn, 'w-20 transition-all duration-500': !isOpenn,}"
+        >
+            <div :class="isOpenn ? 'justify-between' : 'justify-evenly my-2'" class="flex justify-between items-center px-4 py-3 md:py-2.5 lg:py-3">
+                <div :class="isOpenn ? 'block' : 'hidden'" class="flex items-center gap-2 md:gap-3">
+                    <img class="w-9 md:w-10 h-9 md:h-10" src="/images/bg.png">
+                    <h1 class="text-xs md:text-sm text-white font-semibold uppercase">Coffee</h1>
+                </div>
+                <button @click="isOpenn = !isOpenn" class="hidden md:block">
+                    <svg class="w-[22px] md:w-6 fill-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 7C20.75 7.41421 20.4142 7.75 20 7.75L4 7.75C3.58579 7.75 3.25 7.41421 3.25 7C3.25 6.58579 3.58579 6.25 4 6.25L20 6.25C20.4142 6.25 20.75 6.58579 20.75 7Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 12C20.75 12.4142 20.4142 12.75 20 12.75L4 12.75C3.58579 12.75 3.25 12.4142 3.25 12C3.25 11.5858 3.58579 11.25 4 11.25L20 11.25C20.4142 11.25 20.75 11.5858 20.75 12Z"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.75 17C20.75 17.4142 20.4142 17.75 20 17.75L4 17.75C3.58579 17.75 3.25 17.4142 3.25 17C3.25 16.5858 3.58579 16.25 4 16.25L20 16.25C20.4142 16.25 20.75 16.5858 20.75 17Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="grid gap-3 mt-3">
+                <a href="dashboard.html">
+                    <button class="w-full relative group flex items-center gap-2 md:gap-3 pr-5">
+                        <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
+                        <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex items-center gap-2 md:gap-3 w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
+                            <svg class="w-4 md:w-5 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 22L2 22" stroke-linecap="round"/>
+                                <path d="M2 11L6.06296 7.74968M22 11L13.8741 4.49931C12.7784 3.62279 11.2216 3.62279 10.1259 4.49931L9.34398 5.12486" stroke-linecap="round"/>
+                                <path d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5" stroke-linecap="round"/>
+                                <path d="M4 22V9.5" stroke-linecap="round"/>
+                                <path d="M20 9.5V13.5M20 22V17.5" stroke-linecap="round"/>
+                                <path d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393M9 22V17" stroke-linecap="round"/>
+                                <path d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z"/>
+                            </svg>
+                            <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-primary group-focus:text-primary">Dashboard</h1>
+                        </div>
+                    </button>
+                </a>
+                <h1 class="text-xs md:text-sm text-white font-semibold ml-5">Menu</h1>
+                <a href="#" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                    <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
+                    <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 md:w-5 fill-white transition-colors duration-300 group-hover:fill-primary group-focus:fill-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
+                                <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
+                                <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
+                            </svg>
+                            <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-primary group-focus:text-primary">Keranjang</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="md:absolute md:bottom-0 w-full bg-primary py-5">
+                    <div :class="isOpenn ? 'bg-white py-2 px-6 rounded md:rounded-md shadow-lg shadow-black/20' : 'bg-transparent py-2 px-3 hover:bg-white rounded md:rounded-md hover:shadow-lg hover:shadow-black/20'" class="flex justify-center items-center gap-2 md:gap-3 ml-4 mr-5 md:mx-5">
+                        <svg class="w-[14px]" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 8.25C4.08579 8.25 3.75 8.58578 3.75 9C3.75 9.41421 4.08579 9.75 4.5 9.75L12.5 9.75L12.5 12C12.5 12.929 12.5 13.3935 12.4384 13.7822C12.0996 15.9216 10.4216 17.5996 8.28217 17.9384C7.89351 18 7.429 18 6.5 18C5.57099 18 5.10649 18 4.71783 17.9384C2.57836 17.5996 0.900415 15.9216 0.561557 13.7822C0.499999 13.3935 0.499999 12.929 0.499999 12L0.5 6C0.5 5.07099 0.5 4.60649 0.561558 4.21783C0.900415 2.07836 2.57837 0.400415 4.71783 0.0615577C5.10649 -6.18232e-07 5.57099 -5.97928e-07 6.5 -5.5732e-07C7.42901 -5.16712e-07 7.89351 -4.96408e-07 8.28217 0.0615578C10.4216 0.400416 12.0996 2.07836 12.4384 4.21783C12.5 4.60649 12.5 5.07099 12.5 6L12.5 8.25L4.5 8.25ZM12.5 8.25L17.3105 8.25C16.983 7.92734 16.501 7.54375 15.797 6.98553L14.034 5.58768C13.7095 5.33034 13.655 4.8586 13.9123 4.53403C14.1697 4.20946 14.6414 4.15497 14.966 4.41232L16.7648 5.83857C17.4372 6.37175 17.9922 6.81172 18.3875 7.20551C18.7932 7.60962 19.1294 8.05816 19.2208 8.63133C19.2402 8.75344 19.25 8.87661 19.25 9C19.25 9.12339 19.2402 9.24656 19.2208 9.36867C19.1294 9.94184 18.7932 10.3904 18.3875 10.7945C17.9922 11.1883 17.4373 11.6282 16.7648 12.1614L14.966 13.5877C14.6414 13.845 14.1697 13.7905 13.9123 13.466C13.655 13.1414 13.7095 12.6697 14.034 12.4123L15.797 11.0145C16.501 10.4563 16.983 10.0727 17.3105 9.75L12.5 9.75L12.5 8.25Z" fill="#FF4E4E"/>
+                        </svg>
+                        <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-[#FF4E4E] font-semibold">Logout</h1>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <main :class="isOpenn ? 'md:ml-60' : 'md:ml-20 ' + 'transition-all duration-500'" class="relative md:ml-60 pt-16 p-5 space-y-5">
+            <div class="flex justify-between items-center">
+                <h1 class="text-base md:text-lg lg:text-xl text-black font-medium">Profile</h1>
+                <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-primary font-medium">Home</span> / Profile</h1>
+            </div>
+
+            <form action="" method="" class="flex items-center gap-2 md:gap-3">
+                <div class="relative w-24 md:w-28 h-24 md:h-28">
+                    <div class="absolute inset-0 bg-[#0000004A] rounded-lg"></div>
+                    <label for="/images" class="w-full inset-0 absolute flex justify-center items-center">
+                        <div class="space-y-0.5 cursor-pointer">
+                            <svg class="w-4 md:w-5 fill-white mx-auto" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 4.25C7.48122 4.25 6.25 5.48122 6.25 7C6.25 8.51878 7.48122 9.75 9 9.75C10.5188 9.75 11.75 8.51878 11.75 7C11.75 5.48122 10.5188 4.25 9 4.25ZM7.75 7C7.75 6.30964 8.30964 5.75 9 5.75C9.69036 5.75 10.25 6.30964 10.25 7C10.25 7.69036 9.69036 8.25 9 8.25C8.30964 8.25 7.75 7.69036 7.75 7Z"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4635 0.373728C13.3214 0.249985 11.8818 0.249992 10.0452 0.25H9.95475C8.11821 0.249992 6.67861 0.249985 5.53648 0.373728C4.37094 0.500006 3.42656 0.762324 2.62024 1.34815C2.13209 1.70281 1.70281 2.13209 1.34815 2.62024C0.762324 3.42656 0.500006 4.37094 0.373728 5.53648C0.249985 6.67861 0.249992 8.11821 0.25 9.95475V10.0452C0.249992 11.8818 0.249985 13.3214 0.373728 14.4635C0.500006 15.6291 0.762324 16.5734 1.34815 17.3798C1.36102 17.3975 1.37399 17.4151 1.38706 17.4327C1.73405 17.899 2.14981 18.3101 2.62024 18.6518C3.42656 19.2377 4.37094 19.5 5.53648 19.6263C6.67859 19.75 8.11817 19.75 9.95465 19.75H10.0453C11.8818 19.75 13.3214 19.75 14.4635 19.6263C15.6291 19.5 16.5734 19.2377 17.3798 18.6518C17.8679 18.2972 18.2972 17.8679 18.6518 17.3798C19.5217 16.1825 19.6903 14.6546 19.7348 12.5005C19.75 11.7682 19.75 10.9403 19.75 10.006V9.95473C19.75 8.11824 19.75 6.67859 19.6263 5.53648C19.5 4.37094 19.2377 3.42656 18.6518 2.62024C18.2972 2.13209 17.8679 1.70281 17.3798 1.34815C16.5734 0.762324 15.6291 0.500006 14.4635 0.373728ZM3.50191 2.56168C4.00992 2.19259 4.66013 1.97745 5.69804 1.865C6.74999 1.75103 8.10843 1.75 10 1.75C11.8916 1.75 13.25 1.75103 14.302 1.865C15.3399 1.97745 15.9901 2.19259 16.4981 2.56168C16.8589 2.82382 17.1762 3.14111 17.4383 3.50191C17.8074 4.00992 18.0225 4.66013 18.135 5.69804C18.249 6.74999 18.25 8.10843 18.25 10C18.25 10.255 18.25 10.5006 18.2497 10.7373C18.1438 10.6476 18.0435 10.5687 17.9448 10.4986C15.4737 8.7441 12.0651 9.20873 10.1537 11.5606C9.99513 11.7558 9.8432 11.9843 9.67111 12.2694L9.54618 12.2444C8.44707 12.0244 7.77404 11.8897 7.14216 11.9032C5.45369 11.939 3.86636 12.7154 2.80143 14.0261C2.53101 14.359 2.30278 14.7487 2.02741 15.2781C1.95858 14.9948 1.90522 14.6732 1.865 14.302C1.75103 13.25 1.75 11.8916 1.75 10C1.75 8.10843 1.75103 6.74999 1.865 5.69804C1.97745 4.66013 2.19259 4.00992 2.56168 3.50191C2.82382 3.14111 3.14111 2.82382 3.50191 2.56168ZM17.0764 11.7217C17.3239 11.8974 17.6104 12.1728 18.2273 12.7882C18.1701 14.7589 17.972 15.7636 17.4383 16.4981C17.1762 16.8589 16.8589 17.1762 16.4981 17.4383C15.9901 17.8074 15.3399 18.0225 14.302 18.135C13.25 18.249 11.8916 18.25 10 18.25C9.2582 18.25 8.59839 18.2498 8.0069 18.2428L10.3256 14.1404C10.4556 13.9105 10.5685 13.7108 10.6693 13.5345C10.9887 12.9758 11.1615 12.699 11.3178 12.5066C12.7305 10.7683 15.25 10.4249 17.0764 11.7217ZM6.34708 18.131C6.33655 18.1496 6.3269 18.1685 6.31812 18.1876C6.09986 18.1735 5.89365 18.1562 5.69804 18.135C4.66013 18.0225 4.00992 17.8074 3.50191 17.4383C3.28075 17.2776 3.07593 17.0962 2.89014 16.8968C3.45192 15.7732 3.68417 15.3184 3.96564 14.972C4.75276 14.0031 5.92601 13.4293 7.17401 13.4028C7.55888 13.3947 7.98434 13.4647 8.88421 13.6422L6.34708 18.131Z"/>
+                            </svg>
+                            <h1 class="text-[10px] md:text-xs text-white font-normal">Ganti Foto</h1>
+                            <input id="/images" type="file" class="hidden" onchange="previewImage(event, 'image-preview1')"/>
+                        </div>
+                    </label>
+                    <img id="image-preview1" class="w-24 md:w-28 h-24 md:h-28 object-cover rounded-lg" src="/images/avatar.jpg">
+                </div>
+                <button type="submit" class="border border-primary py-1.5 px-6 rounded shadow-md">
+                    <h1 class="text-[10px] md:text-xs text-primary font-medium uppercase">Update</h1>
+                </button>
+            </form>
+
+            <form class="w-full sm:w-[50%] lg:w-[40%] bg-transparent space-y-5 md:space-y-6 rounded md:rounded-md">
+                <div class="grid gap-y-2">
+                    <label x-data="{ chars : 0 }" class="grid gap-1">
+                        <input @keyup="chars = 0 + $refs.username.value.length" x-ref="username" maxlength="10" type="text" placeholder="Nama maksimal 10 karakter" required autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                        <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">Nama <span class="text-[#FF4E4E] font-medium">*</span></h1>
+                        <h1 x-text="chars + ' Karakter'" class="order-3 mx-1 text-[10px] md:text-xs text-gray-500 font-medium capitalize"></h1>
+                    </label>
+                    <label class="grid gap-1">
+                        <input type="email" placeholder="Masukkan email" required autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                        <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">Email <span class="text-[#FF4E4E] font-medium">*</span></h1>
+                    </label>
+                    <label class="grid gap-1">
+                        <input type="text" placeholder="Masukkan no. hp" autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                        <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">No. Hp <span class="text-[#FF4E4E] font-medium">*</span></h1>
+                    </label>
+                    <label class="grid gap-1">
+                        <input type="text" placeholder="Masukkan alamat" autocomplete="off" class="peer order-2 transition-colors duration-500 w-full text-[10px] md:text-xs text-[#ABABAB] focus:text-black font-normal placeholder:text-[10px] md:placeholder:text-xs focus:placeholder:text-black placeholder:font-normal bg-transparent px-5 py-1.5 md:py-2 border border-[#ABABAB] focus:border-black rounded-md focus:outline-none focus:ring-0"/>
+                        <h1 class="order-1 mx-1 text-xs md:text-sm text-black font-medium capitalize">Alamat <span class="text-[#FF4E4E] font-medium">*</span></h1>
+                    </label>
+                </div>
+            
+                <div class="flex items-center gap-2 md:gap-3">
+                    <a href="dashboard.html" class="bg-[#FF4E4E] py-1.5 px-6 rounded shadow-md">
+                        <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Batal</h1>
+                    </a>
+                    <button type="submit" class="bg-primary py-1.5 px-6 rounded shadow-md">
+                        <h1 class="text-[10px] md:text-xs text-white font-medium uppercase">Simpan</h1>
+                    </button>
+                    <div x-data="{ modal : true }" x-show="modal" x-transition.duration.300ms.opacity.50 :class="{ 'visible': modal, 'invisible': !modal }" class="invisible fixed inset-0 z-50 bg-[#0000006E] flex items-center justify-center h-screen">
+                        <div class="w-[80%] sm:w-[50%] md:w-[35%] bg-white py-10 px-5 rounded-lg md:rounded-xl space-y-4">
+                            <svg class="w-10 mx-auto" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M59.7615 29.873C59.7615 25.9646 58.9917 22.0945 57.4961 18.4837C56.0004 14.8728 53.8082 11.5919 51.0445 8.82831C48.2809 6.06468 45 3.87246 41.3892 2.3768C37.7783 0.881135 33.9083 0.111328 29.9999 0.111328C26.0916 0.111328 22.2215 0.881135 18.6106 2.3768C14.9998 3.87246 11.7189 6.06468 8.95526 8.82831C6.19164 11.5919 3.99941 14.8728 2.50375 18.4837C1.00809 22.0945 0.238281 25.9646 0.238281 29.873C0.238281 37.7662 3.37387 45.3362 8.95526 50.9176C14.5366 56.499 22.1066 59.6346 29.9999 59.6346C37.8932 59.6346 45.4632 56.499 51.0445 50.9176C56.6259 45.3362 59.7615 37.7662 59.7615 29.873ZM5.19855 29.873C5.19855 23.2952 7.81154 16.9869 12.4627 12.3357C17.1139 7.68459 23.4222 5.0716 29.9999 5.0716C36.5776 5.0716 42.886 7.68459 47.5371 12.3357C52.1883 16.9869 54.8013 23.2952 54.8013 29.873C54.8013 36.4507 52.1883 42.759 47.5371 47.4102C42.886 52.0613 36.5776 54.6743 29.9999 54.6743C23.4222 54.6743 17.1139 52.0613 12.4627 47.4102C7.81154 42.759 5.19855 36.4507 5.19855 29.873ZM25.0396 23.6726C25.0396 24.1612 24.9434 24.6449 24.7565 25.0963C24.5695 25.5476 24.2955 25.9577 23.95 26.3032C23.6046 26.6486 23.1944 26.9227 22.7431 27.1096C22.2917 27.2966 21.808 27.3928 21.3194 27.3928C20.8309 27.3928 20.3471 27.2966 19.8958 27.1096C19.4444 26.9227 19.0343 26.6486 18.6888 26.3032C18.3434 25.9577 18.0694 25.5476 17.8824 25.0963C17.6955 24.6449 17.5992 24.1612 17.5992 23.6726C17.5992 22.686 17.9912 21.7397 18.6888 21.042C19.3865 20.3444 20.3328 19.9524 21.3194 19.9524C22.3061 19.9524 23.2523 20.3444 23.95 21.042C24.6477 21.7397 25.0396 22.686 25.0396 23.6726ZM42.4006 23.6726C42.4006 24.6593 42.0086 25.6055 41.311 26.3032C40.6133 27.0009 39.667 27.3928 38.6804 27.3928C37.6937 27.3928 36.7475 27.0009 36.0498 26.3032C35.3521 25.6055 34.9602 24.6593 34.9602 23.6726C34.9602 22.686 35.3521 21.7397 36.0498 21.042C36.7475 20.3444 37.6937 19.9524 38.6804 19.9524C39.667 19.9524 40.6133 20.3444 41.311 21.042C42.0086 21.7397 42.4006 22.686 42.4006 23.6726ZM20.7341 43.8708C25.3224 38.4344 34.6725 38.4344 39.2657 43.8708C39.4706 44.1345 39.7268 44.3541 40.0186 44.5163C40.3105 44.6786 40.6322 44.7803 40.9643 44.8152C41.2964 44.8502 41.6322 44.8177 41.9515 44.7197C42.2707 44.6217 42.5669 44.4603 42.8223 44.245C43.0776 44.0298 43.2869 43.7652 43.4375 43.4671C43.5881 43.169 43.6769 42.8436 43.6987 42.5103C43.7204 42.1771 43.6747 41.8429 43.5641 41.5277C43.4536 41.2126 43.2805 40.923 43.0553 40.6764C36.483 32.8888 23.5119 32.8888 16.9445 40.6764C16.7193 40.923 16.5462 41.2126 16.4357 41.5277C16.3251 41.8429 16.2794 42.1771 16.3011 42.5103C16.3229 42.8436 16.4117 43.169 16.5623 43.4671C16.7129 43.7652 16.9222 44.0298 17.1775 44.245C17.4329 44.4603 17.7291 44.6217 18.0483 44.7197C18.3676 44.8177 18.7034 44.8502 19.0355 44.8152C19.3676 44.7803 19.6893 44.6786 19.9812 44.5163C20.2731 44.3541 20.5292 44.1345 20.7341 43.8708Z" fill="#F21E1E" fill-opacity="0.93"/>
+                            </svg>
+                            <div class="text-center">
+                                <h1 class="text-base md:text-lg text-[#4A4A4A] font-bold">Gagal Simpan Data</h1>
+                            </div>
+                            <div @click="modal = false" class="w-fit bg-[#F21E1EED] py-1.5 px-6 rounded mx-auto cursor-pointer">
+                                <h1 class="text-xs md:text-sm text-white font-medium capitalize">Mengerti</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="/js/chartLine.js"></script>
+    <script src="/js/images.js"></script>
+</body>
+</html>
