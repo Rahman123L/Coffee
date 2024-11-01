@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
+    <title>Keranjang</title>
     <link href="images/bg.png" rel="shortcut icon" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.13/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -157,11 +157,11 @@
                     </button>
                 </a>
                 <h1 class="text-xs md:text-sm text-white font-semibold ml-5">Menu</h1>
-                <a href="#" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                <a href="keranjang.html" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
                     <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
                     <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
                         <div class="flex items-center gap-2 md:gap-3">
-                            <svg class="w-4 md:w-5 fill-white transition-colors duration-300 group-hover:fill-primary group-focus:fill-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 md:w-5 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
                                 <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
                                 <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
@@ -170,7 +170,39 @@
                         </div>
                     </div>
                 </a>
-                <a href="" class="md:absolute md:bottom-0 w-full bg-primary py-5">
+                <a href="product.html" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                    <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
+                    <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 md:w-5 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.7769 10L16.6065 11.2941" stroke-linecap="round"/>
+                                <path d="M11 12.8975L13.8978 13.6739" stroke-linecap="round"/>
+                                <path d="M20.3116 12.6473C19.7074 14.9024 19.4052 16.0299 18.7203 16.7612C18.1795 17.3386 17.4796 17.7427 16.7092 17.9223C16.6129 17.9448 16.5152 17.9621 16.415 17.9744C15.4999 18.0873 14.3834 17.7881 12.3508 17.2435C10.0957 16.6392 8.96815 16.3371 8.23687 15.6522C7.65945 15.1114 7.25537 14.4115 7.07573 13.641C6.84821 12.6652 7.15033 11.5377 7.75458 9.28263L8.27222 7.35077C8.35912 7.02646 8.43977 6.72546 8.51621 6.44561C8.97128 4.77957 9.27709 3.86298 9.86351 3.23687C10.4043 2.65945 11.1042 2.25537 11.8747 2.07573C12.8504 1.84821 13.978 2.15033 16.2331 2.75458C18.4881 3.35883 19.6157 3.66095 20.347 4.34587C20.9244 4.88668 21.3285 5.58657 21.5081 6.35703C21.669 7.04708 21.565 7.81304 21.2766 9" stroke-linecap="round"/>
+                                <path d="M3.27222 16.647C3.87647 18.9021 4.17859 20.0296 4.86351 20.7609C5.40432 21.3383 6.10421 21.7424 6.87466 21.922C7.85044 22.1495 8.97798 21.8474 11.2331 21.2432C13.4881 20.6389 14.6157 20.3368 15.347 19.6519C15.8399 19.1902 16.2065 18.6126 16.415 17.9741M8.51621 6.44531C8.16368 6.53646 7.77741 6.63996 7.35077 6.75428C5.09569 7.35853 3.96815 7.66065 3.23687 8.34557C2.65945 8.88638 2.25537 9.58627 2.07573 10.3567C1.91482 11.0468 2.01883 11.8129 2.30728 13" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-primary group-focus:text-primary">Product</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="pesanan.html" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                    <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
+                    <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 md:w-5 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.5 14L17 14" stroke-linecap="round"/>
+                                <path d="M7 14H7.5" stroke-linecap="round"/>
+                                <path d="M7 10.5H7.5" stroke-linecap="round"/>
+                                <path d="M7 17.5H7.5" stroke-linecap="round"/>
+                                <path d="M10.5 10.5H17" stroke-linecap="round"/>
+                                <path d="M10.5 17.5H17" stroke-linecap="round"/>
+                                <path d="M8 3.5C8 2.67157 8.67157 2 9.5 2H14.5C15.3284 2 16 2.67157 16 3.5V4.5C16 5.32843 15.3284 6 14.5 6H9.5C8.67157 6 8 5.32843 8 4.5V3.5Z"/>
+                                <path d="M21 16.0002C21 18.8286 21 20.2429 20.1213 21.1215C19.2426 22.0002 17.8284 22.0002 15 22.0002H9C6.17157 22.0002 4.75736 22.0002 3.87868 21.1215C3 20.2429 3 18.8286 3 16.0002V13.0002M16 4.00195C18.175 4.01406 19.3529 4.11051 20.1213 4.87889C21 5.75757 21 7.17179 21 10.0002V12.0002M8 4.00195C5.82497 4.01406 4.64706 4.11051 3.87868 4.87889C3.11032 5.64725 3.01385 6.82511 3.00174 9" stroke-linecap="round"/>
+                            </svg>
+                            <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-primary group-focus:text-primary">Pesanan</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="/index.html" class="md:absolute md:bottom-0 w-full bg-primary py-5">
                     <div :class="isOpenn ? 'bg-white py-2 px-6 rounded md:rounded-md shadow-lg shadow-black/20' : 'bg-transparent py-2 px-3 hover:bg-white rounded md:rounded-md hover:shadow-lg hover:shadow-black/20'" class="flex justify-center items-center gap-2 md:gap-3 ml-4 mr-5 md:mx-5">
                         <svg class="w-[14px]" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 8.25C4.08579 8.25 3.75 8.58578 3.75 9C3.75 9.41421 4.08579 9.75 4.5 9.75L12.5 9.75L12.5 12C12.5 12.929 12.5 13.3935 12.4384 13.7822C12.0996 15.9216 10.4216 17.5996 8.28217 17.9384C7.89351 18 7.429 18 6.5 18C5.57099 18 5.10649 18 4.71783 17.9384C2.57836 17.5996 0.900415 15.9216 0.561557 13.7822C0.499999 13.3935 0.499999 12.929 0.499999 12L0.5 6C0.5 5.07099 0.5 4.60649 0.561558 4.21783C0.900415 2.07836 2.57837 0.400415 4.71783 0.0615577C5.10649 -6.18232e-07 5.57099 -5.97928e-07 6.5 -5.5732e-07C7.42901 -5.16712e-07 7.89351 -4.96408e-07 8.28217 0.0615578C10.4216 0.400416 12.0996 2.07836 12.4384 4.21783C12.5 4.60649 12.5 5.07099 12.5 6L12.5 8.25L4.5 8.25ZM12.5 8.25L17.3105 8.25C16.983 7.92734 16.501 7.54375 15.797 6.98553L14.034 5.58768C13.7095 5.33034 13.655 4.8586 13.9123 4.53403C14.1697 4.20946 14.6414 4.15497 14.966 4.41232L16.7648 5.83857C17.4372 6.37175 17.9922 6.81172 18.3875 7.20551C18.7932 7.60962 19.1294 8.05816 19.2208 8.63133C19.2402 8.75344 19.25 8.87661 19.25 9C19.25 9.12339 19.2402 9.24656 19.2208 9.36867C19.1294 9.94184 18.7932 10.3904 18.3875 10.7945C17.9922 11.1883 17.4373 11.6282 16.7648 12.1614L14.966 13.5877C14.6414 13.845 14.1697 13.7905 13.9123 13.466C13.655 13.1414 13.7095 12.6697 14.034 12.4123L15.797 11.0145C16.501 10.4563 16.983 10.0727 17.3105 9.75L12.5 9.75L12.5 8.25Z" fill="#FF4E4E"/>
@@ -198,8 +230,8 @@
                     </div>
                     <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
                     <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="login.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-4 fill-white transition-colors duration-300 group-hover:fill-primary group-focus:fill-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
+                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
                             <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
                             <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
@@ -217,8 +249,8 @@
                     </div>
                     <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
                     <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="login.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-4 fill-white transition-colors duration-300 group-hover:fill-primary group-focus:fill-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
+                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
                             <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
                             <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
@@ -236,8 +268,8 @@
                     </div>
                     <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
                     <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="login.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-4 fill-white transition-colors duration-300 group-hover:fill-primary group-focus:fill-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
+                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
                             <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
                             <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
@@ -255,8 +287,8 @@
                     </div>
                     <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
                     <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="login.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-4 fill-white transition-colors duration-300 group-hover:fill-primary group-focus:fill-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
+                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
                             <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
                             <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
@@ -274,8 +306,8 @@
                     </div>
                     <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
                     <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="login.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-4 fill-white transition-colors duration-300 group-hover:fill-primary group-focus:fill-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
+                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
                             <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
                             <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
@@ -293,8 +325,8 @@
                     </div>
                     <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
                     <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="login.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-4 fill-white transition-colors duration-300 group-hover:fill-primary group-focus:fill-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
+                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
                             <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
                             <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
