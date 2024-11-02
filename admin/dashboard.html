@@ -22,7 +22,8 @@
                     tertiary: '',
                 },
                 boxShadow: {
-                    middle: '0px 0px 40px 1px rgba(0, 0, 0, 0.25)',
+                    ringGreen: '0px 0px 20px 8px rgba(20, 83, 45, 0.25)',
+                    ringRed: '0px 0px 20px 8px rgba(127, 29, 29, 0.25)',
                 },
                 keyframes: {
                     fadeIn: {
@@ -214,19 +215,6 @@
                     </button>
                 </a>
                 <h1 class="text-xs md:text-sm text-white font-semibold ml-5">Menu</h1>
-                <a href="keranjang.html" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
-                    <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
-                    <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
-                        <div class="flex items-center gap-2 md:gap-3">
-                            <svg class="w-4 md:w-5 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
-                                <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
-                                <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
-                            </svg>
-                            <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-primary group-focus:text-primary">Keranjang</h1>
-                        </div>
-                    </div>
-                </a>
                 <a href="product.html" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
                     <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
                     <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
@@ -238,6 +226,35 @@
                                 <path d="M3.27222 16.647C3.87647 18.9021 4.17859 20.0296 4.86351 20.7609C5.40432 21.3383 6.10421 21.7424 6.87466 21.922C7.85044 22.1495 8.97798 21.8474 11.2331 21.2432C13.4881 20.6389 14.6157 20.3368 15.347 19.6519C15.8399 19.1902 16.2065 18.6126 16.415 17.9741M8.51621 6.44531C8.16368 6.53646 7.77741 6.63996 7.35077 6.75428C5.09569 7.35853 3.96815 7.66065 3.23687 8.34557C2.65945 8.88638 2.25537 9.58627 2.07573 10.3567C1.91482 11.0468 2.01883 11.8129 2.30728 13" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-primary group-focus:text-primary">Product</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="kategori.html" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                    <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
+                    <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 md:w-5 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 12C22 12 21.0071 12.8907 19.0212 13.6851L16.2127 14.8085C14.2268 15.6028 13.2339 16 12 16C10.7661 16 9.77318 15.6028 7.7873 14.8085L4.97883 13.6851C2.99294 12.8907 2 12 2 12" stroke-linecap="round"/>
+                                <path d="M2 16C2 16 2.99294 16.8907 4.97883 17.6851L7.7873 18.8085C9.77318 19.6028 10.7661 20 12 20C12.9539 20 13.7639 19.7626 15 19.2878M19.0212 17.6851C21.0071 16.8907 22 16 22 16" stroke-linecap="round"/>
+                                <path d="M4.97883 6.31492C2.99294 7.10927 2 7.50645 2 8C2 8.49355 2.99294 8.89073 4.97883 9.68508L7.7873 10.8085C9.77318 11.6028 10.7661 12 12 12C13.2339 12 14.2268 11.6028 16.2127 10.8085L19.0212 9.68508C21.0071 8.89073 22 8.49355 22 8C22 7.50645 21.0071 7.10927 19.0212 6.31492L16.2127 5.19153C14.2268 4.39718 13.2339 4 12 4C11.0461 4 10.2361 4.2374 9 4.71221" stroke-linecap="round"/>
+                            </svg>
+                            <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-primary group-focus:text-primary">Kategori</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="report.html" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                    <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
+                    <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 md:w-5 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.87988 18.1501V16.0801" stroke-linecap="round"/>
+                                <path d="M12 18.15V14.01" stroke-linecap="round"/>
+                                <path d="M17.1201 18.1499V11.9299" stroke-linecap="round"/>
+                                <path d="M17.1199 5.8501L16.6599 6.3901C14.1099 9.3701 10.6899 11.4801 6.87988 12.4301" stroke-linecap="round"/>
+                                <path d="M14.1899 5.8501H17.1199V8.7701" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-primary group-focus:text-primary">Report</h1>
                         </div>
                     </div>
                 </a>
@@ -259,6 +276,19 @@
                         </div>
                     </div>
                 </a>
+                <a href="user.html" class="w-full group flex items-center gap-2 md:gap-3 pr-5">
+                    <div class="invisible transition-all group-hover:visible group-focus:visible bg-white py-3.5 md:py-4 px-1 rounded-r-md"></div>
+                    <div :class="isOpenn ? 'py-1.5' : 'justify-center py-2'" class="flex justify-between items-center w-full py-1.5 px-3 bg-transparent transition-colors duration-300 group-hover:bg-white group-focus:bg-white rounded-md group-hover:shadow-lg group-hover:shadow-black/20 group-focus:shadow-lg group-focus:shadow-black/20">
+                        <div class="flex items-center gap-2 md:gap-3">
+                            <svg class="w-4 md:w-5 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="9" r="3"/>
+                                <path d="M17.9691 20C17.81 17.1085 16.9247 15 11.9999 15C7.07521 15 6.18991 17.1085 6.03076 20" stroke-linecap="round"/>
+                                <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke-linecap="round"/>
+                            </svg>
+                            <h1 :class="isOpenn ? 'block' : 'hidden'" class="text-xs md:text-sm text-white font-semibold transition-colors duration-300 group-hover:text-primary group-focus:text-primary">User</h1>
+                        </div>
+                    </div>
+                </a>
                 <a href="/index.html" class="md:absolute md:bottom-0 w-full bg-primary py-5">
                     <div :class="isOpenn ? 'bg-white py-2 px-6 rounded md:rounded-md shadow-lg shadow-black/20' : 'bg-transparent py-2 px-3 hover:bg-white rounded md:rounded-md hover:shadow-lg hover:shadow-black/20'" class="flex justify-center items-center gap-2 md:gap-3 ml-4 mr-5 md:mx-5">
                         <svg class="w-[14px]" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -276,129 +306,37 @@
                 <h1 class="text-xs md:text-sm text-black font-medium"><span class="text-primary font-medium">Home</span> / Dashboard</h1>
             </div>
 
+            <div class="w-full sm:w-[80%] lg:w-[50%] grid grid-cols-2">
+                <div class="flex items-center gap-3 py-2 px-5">
+                    <div class="bg-green-800 p-2 rounded-full ring-2 ring-green-900 shadow-ringGreen">
+                        <svg class="w-4 stroke-white stroke-[2]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 7V12.5458M22 7H16.4179M22 7L17.5 11.5M14.6203 14.3347C13.6227 15.3263 13.1238 15.822 12.5051 15.822C11.8864 15.8219 11.3876 15.326 10.3902 14.3342L10.1509 14.0962C9.15254 13.1035 8.65338 12.6071 8.03422 12.6074C7.41506 12.6076 6.91626 13.1043 5.91867 14.0977L2 18" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="md:-space-y-1">
+                        <h1 class="text-sm md:text-base text-primary font-medium">Pemasukan</h1>
+                        <p class="text-sm md:text-base text-black font-bold">15.000.000</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 py-2 px-5">
+                    <div class="bg-red-800 p-2 rounded-full ring-2 ring-red-900 shadow-ringRed">
+                        <svg class="w-4 stroke-white stroke-[2]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.6203 10.6653C13.6227 9.67375 13.1238 9.17795 12.5051 9.17802C11.8864 9.17809 11.3876 9.674 10.3902 10.6658L10.1509 10.9038C9.15254 11.8965 8.65338 12.3929 8.03422 12.3926C7.41506 12.3924 6.91626 11.8957 5.91867 10.9023L2 7M22 18V12.4542M22 18H16.4179M22 18L17.5 13.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="md:-space-y-1">
+                        <h1 class="text-sm md:text-base text-primary font-medium">Pengeluaran</h1>
+                        <p class="text-sm md:text-base text-black font-bold">10.000.000</p>
+                    </div>
+                </div>
+            </div>
+
             <section class="grid grid-cols-1 lg:grid-cols-5 gap-4">
                 <div class="col-span-1 lg:col-span-3 h-fit">
                     <div class="h-[300px] lg:h-[400px] bg-white p-3 pb-14 md:p-4 md:pb-[70px] space-y-2 md:space-y-3 rounded md:rounded-md">
-                        <h1 class="text-xs md:text-sm text-[#8B8B8B] font-normal">Grafik Total Order</h1>
+                        <h1 class="text-xs md:text-sm text-[#8B8B8B] font-normal">Grafik Data Laporan</h1>
                         <canvas id="chartLine"></canvas>
                     </div>
-                </div>
-            </section>
-
-            <section class="w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 py-6 px-4">
-                <div class="bg-primary p-6 bg-opacity-10 rounded-xl space-y-3 h-max">
-                    <div class="w-full h-[10rem] md:h-[13rem] mx-auto bg-transparent overflow-hidden bg-cover">
-                        <img class="w-full h-full object-contain" src="/images/card.png">
-                    </div>
-                    <div class="space-y-1">
-                        <h1 class="text-sm md:text-base text-black font-medium capitalize">Lorem, ipsum dolor.</h1>
-                        <p class="line-clamp-3 text-xs md:text-sm text-gray-500 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptas perferendis consequatur asperiores sint hic, rerum maiores ipsum voluptate nulla.</p>
-                    </div>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
-                            <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
-                            <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
-                        </svg>
-                        <h1 class="text-center text-[10px] md:text-xs text-white font-medium uppercase">Beli</h1>
-                    </a>
-                </div>
-                <div class="bg-primary p-6 bg-opacity-10 rounded-xl space-y-3 h-max">
-                    <div class="w-full h-[10rem] md:h-[13rem] mx-auto bg-transparent overflow-hidden bg-cover">
-                        <img class="w-full h-full object-contain" src="/images/card.png">
-                    </div>
-                    <div class="space-y-1">
-                        <h1 class="text-sm md:text-base text-black font-medium capitalize">Lorem, ipsum dolor.</h1>
-                        <p class="line-clamp-3 text-xs md:text-sm text-gray-500 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptas perferendis consequatur asperiores sint hic, rerum maiores ipsum voluptate nulla.</p>
-                    </div>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
-                            <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
-                            <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
-                        </svg>
-                        <h1 class="text-center text-[10px] md:text-xs text-white font-medium uppercase">Beli</h1>
-                    </a>
-                </div>
-                <div class="bg-primary p-6 bg-opacity-10 rounded-xl space-y-3 h-max">
-                    <div class="w-full h-[10rem] md:h-[13rem] mx-auto bg-transparent overflow-hidden bg-cover">
-                        <img class="w-full h-full object-contain" src="/images/card.png">
-                    </div>
-                    <div class="space-y-1">
-                        <h1 class="text-sm md:text-base text-black font-medium capitalize">Lorem, ipsum dolor.</h1>
-                        <p class="line-clamp-3 text-xs md:text-sm text-gray-500 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptas perferendis consequatur asperiores sint hic, rerum maiores ipsum voluptate nulla.</p>
-                    </div>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
-                            <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
-                            <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
-                        </svg>
-                        <h1 class="text-center text-[10px] md:text-xs text-white font-medium uppercase">Beli</h1>
-                    </a>
-                </div>
-                <div class="bg-primary p-6 bg-opacity-10 rounded-xl space-y-3 h-max">
-                    <div class="w-full h-[10rem] md:h-[13rem] mx-auto bg-transparent overflow-hidden bg-cover">
-                        <img class="w-full h-full object-contain" src="/images/card.png">
-                    </div>
-                    <div class="space-y-1">
-                        <h1 class="text-sm md:text-base text-black font-medium capitalize">Lorem, ipsum dolor.</h1>
-                        <p class="line-clamp-3 text-xs md:text-sm text-gray-500 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptas perferendis consequatur asperiores sint hic, rerum maiores ipsum voluptate nulla.</p>
-                    </div>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
-                            <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
-                            <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
-                        </svg>
-                        <h1 class="text-center text-[10px] md:text-xs text-white font-medium uppercase">Beli</h1>
-                    </a>
-                </div>
-                <div class="bg-primary p-6 bg-opacity-10 rounded-xl space-y-3 h-max">
-                    <div class="w-full h-[10rem] md:h-[13rem] mx-auto bg-transparent overflow-hidden bg-cover">
-                        <img class="w-full h-full object-contain" src="/images/card.png">
-                    </div>
-                    <div class="space-y-1">
-                        <h1 class="text-sm md:text-base text-black font-medium capitalize">Lorem, ipsum dolor.</h1>
-                        <p class="line-clamp-3 text-xs md:text-sm text-gray-500 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptas perferendis consequatur asperiores sint hic, rerum maiores ipsum voluptate nulla.</p>
-                    </div>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
-                            <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
-                            <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
-                        </svg>
-                        <h1 class="text-center text-[10px] md:text-xs text-white font-medium uppercase">Beli</h1>
-                    </a>
-                </div>
-                <div class="bg-primary p-6 bg-opacity-10 rounded-xl space-y-3 h-max">
-                    <div class="w-full h-[10rem] md:h-[13rem] mx-auto bg-transparent overflow-hidden bg-cover">
-                        <img class="w-full h-full object-contain" src="/images/card.png">
-                    </div>
-                    <div class="space-y-1">
-                        <h1 class="text-sm md:text-base text-black font-medium capitalize">Lorem, ipsum dolor.</h1>
-                        <p class="line-clamp-3 text-xs md:text-sm text-gray-500 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptas perferendis consequatur asperiores sint hic, rerum maiores ipsum voluptate nulla.</p>
-                    </div>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-medium lowercase">#capucino</h1>
-                    <h1 class="text-xs md:text-sm text-slate-800 font-semibold capitalize">Rp. 70,000.00</h1>
-                    <a href="detailProduct.html" class="w-full flex justify-center gap-1 bg-primary py-1.5 px-6 rounded-md">
-                        <svg class="w-3 md:w-4 stroke-white stroke-[1.5] transition-colors duration-300 group-hover:stroke-primary group-focus:stroke-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.864 16.4552C4.40967 18.6379 4.68251 19.7292 5.49629 20.3646C6.31008 21 7.435 21 9.68486 21H14.3155C16.5654 21 17.6903 21 18.5041 20.3646C19.3179 19.7292 19.5907 18.6379 20.1364 16.4552C20.9943 13.0234 21.4233 11.3075 20.5225 10.1538C19.6217 9 17.853 9 14.3155 9H9.68486C6.14745 9 4.37875 9 3.47791 10.1538C2.94912 10.831 2.87855 11.702 3.08398 13" stroke-linecap="round"/>
-                            <path d="M19.5 9.5L18.7896 6.89465C18.5157 5.89005 18.3787 5.38775 18.0978 5.00946C17.818 4.63273 17.4378 4.34234 17.0008 4.17152C16.5619 4 16.0413 4 15 4M4.5 9.5L5.2104 6.89465C5.48432 5.89005 5.62128 5.38775 5.90221 5.00946C6.18199 4.63273 6.56216 4.34234 6.99922 4.17152C7.43808 4 7.95872 4 9 4"/>
-                            <path d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H10C9.44772 5 9 4.55228 9 4Z"/>
-                        </svg>
-                        <h1 class="text-center text-[10px] md:text-xs text-white font-medium uppercase">Beli</h1>
-                    </a>
                 </div>
             </section>
         </main>

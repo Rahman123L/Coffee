@@ -5,3 +5,29 @@
     font-weight: 300;
     font-style: normal;
 }
+
+.scrollbar-x {
+    overflow-x: scroll;
+}
+
+.scrollbar-x::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-y {
+    overflow-y: scroll;
+    height: 57rem;
+}
+
+.scrollbar-y::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}

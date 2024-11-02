@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
-    <link href="images/bg.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/bg.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.13/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.2/dist/cdn.min.js" defer></script>
@@ -50,22 +51,78 @@
                 </svg>
             </button>
             <div class="flex items-center gap-5 md:gap-6">
-                <div class="flex items-center gap-4 md:gap-6">
-                    <div x-data="{ isOpen : false }" class="relative space-y-3">
-                        <div @click="isOpen = !isOpen" class="relative cursor-pointer">
-                            <svg class="w-[18px] md:w-5 stroke-[#637381] stroke-[2]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.02 2.90991C8.70997 2.90991 6.01997 5.59991 6.01997 8.90991V11.7999C6.01997 12.4099 5.75997 13.3399 5.44997 13.8599L4.29997 15.7699C3.58997 16.9499 4.07997 18.2599 5.37997 18.6999C9.68997 20.1399 14.34 20.1399 18.65 18.6999C19.86 18.2999 20.39 16.8699 19.73 15.7699L18.58 13.8599C18.28 13.3399 18.02 12.4099 18.02 11.7999V8.90991C18.02 5.60991 15.32 2.90991 12.02 2.90991Z" stroke-miterlimit="10" stroke-linecap="round"/>
-                                <path d="M13.87 3.19994C13.56 3.10994 13.24 3.03994 12.91 2.99994C11.95 2.87994 11.03 2.94994 10.17 3.19994C10.46 2.45994 11.18 1.93994 12.02 1.93994C12.86 1.93994 13.58 2.45994 13.87 3.19994Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M15.02 19.0601C15.02 20.7101 13.67 22.0601 12.02 22.0601C11.2 22.0601 10.44 21.7201 9.90002 21.1801C9.36002 20.6401 9.02002 19.8801 9.02002 19.0601" stroke-miterlimit="10"/>
-                            </svg>
-                            <div class="absolute -top-0 -right-0 bg-red-500 p-1 rounded-full"></div>
-                        </div>
-                        <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
-                            <div class="grid w-60 sm:w-72 md:w-80 lg:w-96 bg-white rounded md:rounded-md shadow-lg shadow-black/20">
-                                <div class="p-4 border-b border-[#eaeaea]">
-                                    <h1 class="text-start text-xs md:text-sm text-black font-normal">Notifikasi</h1>
+                <div x-data="{ isOpen : false }" class="relative space-y-3">
+                    <div @click="isOpen = !isOpen" class="relative cursor-pointer">
+                        <svg class="w-[18px] md:w-5 stroke-primary stroke-[2]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.02 2.90991C8.70997 2.90991 6.01997 5.59991 6.01997 8.90991V11.7999C6.01997 12.4099 5.75997 13.3399 5.44997 13.8599L4.29997 15.7699C3.58997 16.9499 4.07997 18.2599 5.37997 18.6999C9.68997 20.1399 14.34 20.1399 18.65 18.6999C19.86 18.2999 20.39 16.8699 19.73 15.7699L18.58 13.8599C18.28 13.3399 18.02 12.4099 18.02 11.7999V8.90991C18.02 5.60991 15.32 2.90991 12.02 2.90991Z" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M13.87 3.19994C13.56 3.10994 13.24 3.03994 12.91 2.99994C11.95 2.87994 11.03 2.94994 10.17 3.19994C10.46 2.45994 11.18 1.93994 12.02 1.93994C12.86 1.93994 13.58 2.45994 13.87 3.19994Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.02 19.0601C15.02 20.7101 13.67 22.0601 12.02 22.0601C11.2 22.0601 10.44 21.7201 9.90002 21.1801C9.36002 20.6401 9.02002 19.8801 9.02002 19.0601" stroke-miterlimit="10"/>
+                        </svg>
+                        <div class="absolute -top-0 -right-0 bg-red-500 p-1 rounded-full"></div>
+                    </div>
+                    <div x-show="isOpen" @click.outside="isOpen = false" x-transition.duration.300ms.opacity.50 :class="{ 'block': isOpen, 'hidden': !isOpen }" class="hidden w-max absolute right-0">
+                        <div class="grid w-60 sm:w-72 md:w-80 lg:w-96 bg-white rounded md:rounded-md shadow-lg shadow-black/20">
+                            <div class="p-4 border-b border-[#eaeaea]">
+                                <h1 class="text-start text-xs md:text-sm text-black font-normal">Notifikasi</h1>
+                            </div>
+                            <div class="bg-[#FBFBFB] py-3 px-4">
+                                <div class="flex items-center gap-2 md:gap-3">
+                                    <div class="bg-primary p-1.5 md:p-2 rounded-full">
+                                        <svg class="w-4 md:w-5 stroke-[1.5] stroke-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 17V11" stroke-linecap="round"/>
+                                            <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)"/>
+                                            <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-start space-y-1">
+                                        <div class="">
+                                            <h1 class="text-xs md:text-sm text-black font-semibold">Pesanan Sedang Diproses</h1>
+                                            <p class="line-clamp-1 text-[10px] md:text-xs text-black font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, quaerat.</p>
+                                        </div>
+                                        <h1 class="text-[8px] md:text-[10px] text-[#B4B4B4] font-normal">Baru saja</h1>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="bg-[#FBFBFB] py-3 px-4">
+                                <div class="flex items-center gap-2 md:gap-3">
+                                    <div class="bg-green-700 p-1.5 md:p-2 rounded-full">
+                                        <svg class="w-4 md:w-5 stroke-[1.5] stroke-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.5 12.5L10.5 14.5L15.5 9.5" stroke-linecap="round"/>
+                                            <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-start space-y-1">
+                                        <div class="">
+                                            <h1 class="text-xs md:text-sm text-black font-semibold">Pesanan Berhasil</h1>
+                                            <p class="line-clamp-1 text-[10px] md:text-xs text-black font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, quaerat.</p>
+                                        </div>
+                                        <h1 class="text-[8px] md:text-[10px] text-[#B4B4B4] font-normal">Baru saja</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-[#FBFBFB] py-3 px-4">
+                                <div class="flex items-center gap-2 md:gap-3">
+                                    <div class="bg-red-700 p-1.5 md:p-2 rounded-full">
+                                        <svg class="w-4 md:w-5 stroke-[1.5] stroke-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke-linecap="round"/>
+                                            <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-start space-y-1">
+                                        <div class="">
+                                            <h1 class="text-xs md:text-sm text-black font-semibold">Pesanan Gagal</h1>
+                                            <p class="line-clamp-1 text-[10px] md:text-xs text-black font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, quaerat.</p>
+                                        </div>
+                                        <h1 class="text-[8px] md:text-[10px] text-[#B4B4B4] font-normal">Baru saja</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="notifikasi.html" class="flex justify-center items-center gap-2 md:gap-3 py-2.5 px-4">
+                                <h1 class="text-xs md:text-sm text-primary font-normal">Selengkapnya</h1>
+                                <svg class="w-1 md:w-1.5 stroke-primary" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.941406 1.13574L2.19018 2.37342C3.18605 3.36044 3.68398 3.85395 3.76065 4.45546C3.77944 4.60284 3.77944 4.75198 3.76065 4.89935C3.68398 5.50086 3.18605 5.99438 2.19018 6.9814L0.941406 8.21908" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
